@@ -1,5 +1,9 @@
 # 💾 commit-ai: write your commit messages with AI 🤖
 
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/adobromilskiy/commit-ai)
+![GitHub License](https://img.shields.io/github/license/adobromilskiy/commit-ai)
+
+
 As a Go developer, I looked at the world and thought:
 
 > You know what this planet really needs? One more commit message generator!
@@ -20,24 +24,32 @@ So, naturally, I built one. Wellcome to another **commit-ai**, the tool for gene
 
 ## 🚀 Getting Started
 
+You can install commit-ai directly using Go:
+
+```bash
+go install github.com/adobromilskiy/commit-ai@latest
+```
+
+Or manually:
+
 1. Clone the repository:
 
-```bash
-git clone https://github.com/adobromilskiy/commit-ai.git
-cd commit-ai
-```
+    ```bash
+    git clone https://github.com/adobromilskiy/commit-ai.git
+    cd commit-ai
+    ```
 
-2. Install:
+2. Install dependencies:
 
-```bash
-go install
-```
+    ```bash
+    go install
+    ```
 
 3. Set your OpenAI API key:
 
-```bash
-export OPENAI_API_KEY=your-api-key-here
-```
+    ```bash
+    export OPENAI_API_KEY=your-api-key-here
+    ```
 
 ## 📚 Usage
 
