@@ -1,5 +1,7 @@
 # 💾 commit-ai: write your commit messages with AI 🤖
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/adobromilskiy/commit-ai.svg)](https://pkg.go.dev/github.com/adobromilskiy/commit-ai)
+[![Go Report Card](https://goreportcard.com/badge/github.com/adobromilskiy/commit-ai)](https://goreportcard.com/report/github.com/adobromilskiy/commit-ai)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/adobromilskiy/commit-ai)
 ![GitHub License](https://img.shields.io/github/license/adobromilskiy/commit-ai)
 
