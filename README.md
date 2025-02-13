@@ -115,7 +115,7 @@ git commit -m "refactor incoming params"
 To make working with commit-ai even faster, you can add the following Git aliases:
 
 ```sh
-git config --global alias.addcommit '!f() { git add $@ && eval "$(commit-ai)"; }; f'
+git config --global alias.addcommit '!f() { git add "$@" && git commit -m "$(commit-ai)"; }; f'
 git config --global alias.prepcommit '!git add $@ && commit-ai'
 ```
 
@@ -132,7 +132,7 @@ git addcommit file1.go file2.go
 Equivalent to:
 
 ```sh
-git add file1.go file2.go && eval "$(commit-ai)"
+git add file1.go file2.go && git commit -m "$(commit-ai)"
 ```
 
 It automatically stages the provided files and runs commit-ai, committing the changes with an AI-generated message.
