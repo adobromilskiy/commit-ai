@@ -1,8 +1,8 @@
 # 💾 commit-ai: write your commit messages with AI 🤖
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/adobromilskiy/commit-ai.svg)](https://pkg.go.dev/github.com/adobromilskiy/commit-ai)
-[![Go Report Card](https://goreportcard.com/badge/github.com/adobromilskiy/commit-ai)](https://goreportcard.com/report/github.com/adobromilskiy/commit-ai)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/adobromilskiy/commit-ai)
+[![Go Report Card](https://goreportcard.com/badge/github.com/adobromilskiy/commit-ai)](https://goreportcard.com/report/github.com/adobromilskiy/commit-ai)
 ![GitHub License](https://img.shields.io/github/license/adobromilskiy/commit-ai)
 
 
@@ -28,7 +28,7 @@ So, naturally, I built one. Wellcome to another **commit-ai**, the tool for gene
 
 You can install commit-ai directly using Go:
 
-```bash
+```sh
 go install github.com/adobromilskiy/commit-ai@latest
 ```
 
@@ -36,20 +36,20 @@ Or manually:
 
 1. Clone the repository:
 
-    ```bash
+    ```sh
     git clone https://github.com/adobromilskiy/commit-ai.git
     cd commit-ai
     ```
 
 2. Install dependencies:
 
-    ```bash
+    ```sh
     go install
     ```
 
 3. Set your OpenAI API key:
 
-    ```bash
+    ```sh
     export OPENAI_API_KEY=your-api-key-here
     ```
 
@@ -59,7 +59,7 @@ Or manually:
 
 Run the command:
 
-```bash
+```sh
 commit-ai
 ```
 
@@ -74,25 +74,25 @@ This will generate a commit message based on the staged changes in your reposito
 
 1. Generate a commit message with package names:
 
-```bash
+```sh
 commit-ai
 ```
 
 2. Generate a commit message without package names:
 
-```bash
+```sh
 commit-ai --no-pkg
 ```
 
 3. Output only the commit message, without the `git commit` command:
 
-```bash
+```sh
 commit-ai --no-cmd
 ```
 
 4. Generate just the commit message without packages and command:
 
-```bash
+```sh
 commit-ai --no-pkg --no-cmd
 ```
 
@@ -100,12 +100,57 @@ commit-ai --no-pkg --no-cmd
 
 If there are staged changes, the tool may generate a commit message like:
 
-```bash
+```sh
 git commit -m "core, database: refactor incoming params"
 ```
 
 If the `--no-pkg` flag is enabled, it will generate:
 
-```bash
+```sh
 git commit -m "refactor incoming params"
 ```
+
+## 🛠️ Tricks & Shortcuts
+
+To make working with commit-ai even faster, you can add the following Git aliases:
+
+```sh
+git config --global alias.addcommit '!f() { git add $@ && eval "$(commit-ai)"; }; f'
+git config --global alias.prepcommit '!git add $@ && commit-ai'
+```
+
+### 🔹 `git addcommit <files>`
+
+This alias adds files to staging and immediately commits them using commit-ai to generate the commit message.
+
+**Example usage:**
+
+```sh
+git addcommit file1.go file2.go
+```
+
+Equivalent to:
+
+```sh
+git add file1.go file2.go && eval "$(commit-ai)"
+```
+
+It automatically stages the provided files and runs commit-ai, committing the changes with an AI-generated message.
+
+### 🔹 `git prepcommit <files>`
+
+This alias stages files and suggests a commit message without actually committing.
+
+**Example usage:**
+
+```sh
+git prepcommit file1.go
+```
+
+Equivalent to:
+
+```sh
+git add file1.go && commit-ai
+```
+
+This lets you preview the AI-generated commit message before manually committing.

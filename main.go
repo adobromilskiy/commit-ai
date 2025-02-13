@@ -14,7 +14,7 @@ func main() {
 	}
 
 	noPackagesFlag := flag.Bool("no-pkg", false, "exclude package name from commit message")
-	noCmdFlag := flag.Bool("no-cmd", false, "keep only commit message")
+	noCmdFlag := flag.Bool("no-cmd", false, "keep only commit message without git command")
 	flag.Parse()
 
 	if err := isGitRepo(); err != nil {
