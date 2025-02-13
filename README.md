@@ -132,7 +132,7 @@ git addcommit file1.go file2.go
 Equivalent to:
 
 ```sh
-git add file1.go file2.go && git commit -m "$(commit-ai)"
+git add file1.go file2.go && git commit -m "$(commit-ai --no-cmd)"
 ```
 
 It automatically stages the provided files and runs commit-ai, committing the changes with an AI-generated message.
