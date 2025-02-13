@@ -115,7 +115,7 @@ git commit -m "refactor incoming params"
 To make working with commit-ai even faster, you can add the following Git aliases:
 
 ```sh
-git config --global alias.addcommit '!f() { git add "$@" && git commit -m "$(commit-ai)"; }; f'
+git config --global alias.addcommit '!f() { git add "$@" && git commit -m "$(commit-ai --no-cmd)"; }; f'
 git config --global alias.prepcommit '!git add $@ && commit-ai'
 ```
 

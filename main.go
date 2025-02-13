@@ -58,5 +58,5 @@ func main() {
 		str = msg + "\n"
 	}
 
-	os.Stderr.WriteString(str)
+	os.Stdout.WriteString(str)
 }
